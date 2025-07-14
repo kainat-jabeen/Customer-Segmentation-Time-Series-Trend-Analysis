@@ -62,21 +62,6 @@ Provided marketing and retention strategies tailored for each customer segment b
 - Time series trends revealed seasonal variations unique to each segment.
 - Marketing strategies can be optimized by targeting these segments accordingly.
 
-## ARIMA MODEL
-- Grouped transactional data by Segment and Month to create time series.
-Checked stationarity using the Augmented Dickey-Fuller (ADF) test.
-Applied differencing where needed to stabilize trends.
-Fitted ARIMA models to key segments:
-🟢 Loyal Customers — consistently high spending; used to forecast future purchase volume.
-
-🟡 At-risk Customers — declining activity; used to predict continued drop or recovery.
-Plotted forecasts to visualize expected trends and support retention strategy.
-
-Key Insights:
-Loyal customers are expected to maintain strong purchasing behavior — marketing should focus on loyalty rewards and upselling.
-At-risk customers show signs of ongoing decline — re-engagement campaigns can be timed around predicted low-activity months.
-ARIMA modeling provided quantitative foresight into customer value by segment, making marketing plans more proactive and data-driven.
-
 ---
 
 *Created by kainat jabeen *
