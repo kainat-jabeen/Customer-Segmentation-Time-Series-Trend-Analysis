@@ -13,31 +13,44 @@ The dataset contains simulated transaction data for 1000 customers over one year
 - `customer_id`: Unique customer identifier
 - `order_date`: Date of the purchase
 - `amount`: Purchase amount in USD
+-
 
-## Methodology:  
-
-### Step 1: Data Simulation
+###   Data Simulation
 Generated synthetic transaction data with randomized purchase dates and amounts per customer.
 
-### Step 2: RFM Feature Engineering
+###  RFM Feature Engineering
 Calculated Recency (days since last purchase), Frequency (total number of purchases), and Monetary (total spending) for each customer.
 
-### Step 3: Clustering
+###  Clustering
 - Scaled RFM features using StandardScaler.
 - Applied K-Means clustering to segment customers into 4 groups (chosen based on the Elbow method).
 
-### Step 4: Cluster Analysis
+###  Cluster Analysis
 - Examined statistical summaries and visualized distributions of RFM features by cluster.
 - Interpreted customer behavior and labeled segments (e.g., loyal customers, at-risk customers).
 
-### Step 5: Time Series Analysis
+###  Time Series Analysis
 - Merged cluster labels with transaction data.
 - Aggregated monthly purchase amounts per cluster.
 - Visualized purchase trends over time by cluster.
 
-### Step 6: Business Recommendations
-Provided marketing and retention strategies tailored for each customer segment based on insights.
+### ARIMA MODEL
+- Grouped transactional data by Segment and Month to create time series.
+Checked stationarity using the Augmented Dickey-Fuller (ADF) test.
+Applied differencing where needed to stabilize trends.
+Fitted ARIMA models to key segments:
+🟢 Loyal Customers — consistently high spending; used to forecast future purchase volume.
 
+🟡 At-risk Customers — declining activity; used to predict continued drop or recovery.
+Plotted forecasts to visualize expected trends and support retention strategy.
+
+Key Insights:
+Loyal customers are expected to maintain strong purchasing behavior — marketing should focus on loyalty rewards and upselling.
+At-risk customers show signs of ongoing decline — re-engagement campaigns can be timed around predicted low-activity months.
+ARIMA modeling provided quantitative foresight into customer value by segment, making marketing plans more proactive and data-driven.
+
+### Business Recommendations
+Provided marketing and retention strategies tailored for each customer segment based on insights.
 ## Tools & Libraries
 - Python (pandas, numpy)
 - scikit-learn (StandardScaler, KMeans)
